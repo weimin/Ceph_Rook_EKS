@@ -12,7 +12,7 @@ Instructions to setup the Cluster:
 6. run terraform apply you should see a green blob of text if everything went well. EKS cluster is now up
 7. Execute kubectl create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/common.yaml then create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/operator.yaml then kubectl create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/cluster-on-pvc.yaml 
 8. Now ceph rook should be installed
-9. Follow [https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html) to add jupyterHUB to the cluster
+9. Follow [https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html) to setup helm then add jupyterHUB to the cluster
 
 Instructions to view the Ceph Dashboard:
 1. Run kubectl create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/dashboard-ingress-https.yaml
