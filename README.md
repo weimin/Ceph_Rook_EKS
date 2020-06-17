@@ -10,12 +10,13 @@ Instructions to setup the Cluster:
 4. There will be some errors but thats alright. run ls to list all files, you should see a file like "kubeconfig_test-eks-XXXXXXX" where XXXXXXX is a random string
 5. We need to export our kubeconfig e.g. export KUBECONFIG=kubeconfig_test-eks-HeuUo1Vp and run terraform apply again.
 6. run terraform apply you should see a green blob of text if everything went well. EKS cluster is now up
-7. Execute kubectl create -f /Users/weimin/Documents/Ceph_Rook_EKS/ClusterSetup/rook_ceph/common.yaml then create -f /Users/weimin/Documents/Ceph_Rook_EKS/ClusterSetup/rook_ceph/operator.yaml then kubectl create -f /Users/weimin/Documents/Ceph_Rook_EKS/ClusterSetup/rook_ceph/cluster-on-pvc.yaml 
+7. Execute kubectl create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/common.yaml then create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/operator.yaml then kubectl create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/cluster-on-pvc.yaml 
 8. Now ceph rook should be installed
 9. Follow [https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html) to add jupyterHUB to the cluster
 
 Instructions to view the Ceph Dashboard:
-1. Register a domain name on namecheap
-2. On the aws console under Load Balancers there should be an A-record address. Use that address as the target for the domain name that was registered. Then if your domain name was http://www.abc.com open the address with your browser.
-3. Get login credentials for the Ceph dashboard by following the instructions here: https://rook.io/docs/rook/v1.3/ceph-dashboard.html 
+1. Run kubectl create -f ~/Ceph_Rook_EKS/ClusterSetup/rook_ceph/dashboard-ingress-https.yaml
+2. Register a domain name on namecheap
+3. On the aws console under Load Balancers there should be an A-record address. Add a cname record and use that address as the target for the domain name that was registered. Then if your domain name was http://www.abc.com open the address with your browser.
+4. Get login credentials for the Ceph dashboard by following the instructions here: https://rook.io/docs/rook/v1.3/ceph-dashboard.html 
 
